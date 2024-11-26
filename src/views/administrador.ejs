@@ -67,19 +67,29 @@
                 <div class="col-10 justify-content-center">
                     <div class="row align-items-center justify-content-center d-flex">
                         <div class="col-6 ubuntu-bold mt-3 d-flex border-zero" style="font-size: 3rem; border-right: 2px solid black; line-height: 95%;">
-                            <p class="ms-5 p-3 d-none d-md-block">
+                            <p class="ms-5 p-3 d    -none d-md-block">
                             Esta é a tela dos administradores do sistema! 
                             </p>
 <!-- Informações do usuário vão aqui -->
                             <p class="ms-5 p-3 d-md-none fs-1 d-flex justify-content-start">
-                                Nome de Usuário:
+                                Nome de Usário: <span><%= usuario.login %></span> 
                                 <span style="font-weight: 100;"> Matricula: </span>
                             </p>
                         </div>
 <!-- Informações do usuário só que no mobile -->
                         <div class="col-6 ubuntu-regular d-none d-md-block" style="font-size: 2rem;">
-                            <p style="font-weight: 1000;">Nome de Usuário: </p>
-                            <p style="margin-top: -1.3rem;">Matricula: </p>
+                            <p style="font-weight: 1000;">Login:  <span><%= usuario.login %></span>  </p>
+                            <p style="margin-top: -1.3rem;">Departamento:  <% if(usuario.depto === 1){ %>
+                                <span> Atendimento </span>
+                              <% } else if (usuario.depto === 2) { %>  
+                                <span> Administrativo </span>
+                                <% } else if (usuario.depto === 3) { %>  
+                                    <span>Financeiro </span>
+                                    <% } else if (usuario.depto === 4) { %>  
+                                        <span> Diretoria </span>
+                                        <% } else { %>  
+                                            <span> Copa </span>
+                             <% } %></p>
                         </div>
                     </div>
 <!-- Três blocos com informações sobre o site (usuários, lucro e funcionários) -->

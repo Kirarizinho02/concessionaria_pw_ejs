@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const controller = require('../controllers/autenticadorController'); 
+const dptoPermitido = require('../middlewares/middlewareAutenticador')
+
+const auth = require('../controllers/autenticadorController'); 
 const clientescrud = require('../controllers/clientescrud');
 const userscrud = require('../controllers/usuarioscrud');
 const veiccrud = require('../controllers/veiculoscrud');
@@ -10,20 +12,20 @@ const funccrud = require('../controllers/funcionarioscrud');
 const ordemcrud = require('../controllers/ordemcrud');
 
 //autenticação do user
-router.post('/login', controller.login); 
+router.post('/login', auth.login); 
 
 //rotas de renderização
 router.get('/index', paginascrud.paginaindex);
 
-router.get('/cadastro_clientes', paginascrud.cadastroCli);
+router.get('/cadastro_clientes', dptoPermitido(1, 2, 3, 4), paginascrud.cadastroCli);
 
-router.get('/cadastro_carros', paginascrud.cadastroVeic);
+router.get('/cadastro_carros', dptoPermitido(2, 3, 4), paginascrud.cadastroVeic);
 
-router.get('/cadastro_funcionarios', paginascrud.cadastroFunc);
+router.get('/cadastro_funcionarios', dptoPermitido(2, 3, 4), paginascrud.cadastroFunc);
 
-router.get('/cadastro_usuarios', paginascrud.cadastroUser);
+router.get('/cadastro_usuarios', dptoPermitido(4), paginascrud.cadastroUser);
 
-router.get('/administrador', paginascrud.adm);
+router.get('/administrador', dptoPermitido(1, 2, 3, 4, 5), paginascrud.adm);
 
 
 //rotas de cliente
@@ -82,6 +84,6 @@ router.post('/ordem/update/:numero', ordemcrud.update);
 
 router.get('/ordem/edit/:numero', ordemcrud.edit);
 
-router.get('/cadastro_ordemservico', ordemcrud.cadastro);
+router.get('/cadastro_ordemservico' , ordemcrud.cadastro);
 
 module.exports = router;

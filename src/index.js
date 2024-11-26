@@ -3,8 +3,25 @@ const morgan = require("morgan");
 const mysql = require("mysql");
 const myConnection = require("express-myconnection");
 const path = require('path');
+const session = require('express-session');
 const app = express();
 require('dotenv').config();
+
+app.use(session({
+    secret: 'chave-secreta',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
+
+app.use((req, res, next) => {
+    if (req.session && req.session.user) {
+        res.locals.usuario = req.session.user;
+    } else {
+        res.locals.usuario = null;
+    }
+    next(); 
+});
 
 const PASS = process.env.DATABASE_PASSWORD;
 
