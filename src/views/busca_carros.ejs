@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Página de busca de carros do BQCars"> 
+        <meta name="author" content="Samuel Augusto de Oliveira e Rodrigo Scatolin Flora do Rio">
+        <title>Busca Carros | BQ Cars</title>
+
+        <script type="javascript/text" src="script/script.js"></script>
+        <style>
+            @import url(style/style.css);
+        </style>
+        <script src="https://kit.fontawesome.com/26a3821824.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+<body style="background-color: #7AF0A3;" onload="navegarCarros('iniciar')">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-flex" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;"">
+        <div class="container-fluid d-flex">
+          <a class="navbar-brand" class="me-2 mb-1 d-flex align-items-center ms-6" href="#">
+            <img src="assets/Logo BQCars.svg" height="120" alt="" loading="lazy" style="margin-top: 2px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse align-items-center" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mx-auto align-items-center">
+                <li class="nav-item">
+                    <div class="d-flex h-100 flex-column align-items-center justify-content-center p-4 hover-azul" style="cursor: pointer;">
+                        <a href="/busca_ordemservico" style="text-decoration: none;">
+                            <i class="fa-solid fa-angle-left text-center ms-4 ps-2 fs-1 mt-4"></i>
+                            <p class="ubuntu-bold text-center me-2 fs-4" style="font-weight: 200;">Anterior</p> 
+                        </a>
+                    </div>
+                </li>
+              <li class="nav-item">
+                <p class="ubuntu-bold text-center " style="font-size: 3rem;"> Busca de carros </p>
+              </li>
+              <li class="nav-item">
+                <div class="d-flex h-100 flex-column align-items-center justify-content-center p-4 hover-azul" style="cursor: pointer;">
+                    <a href="/busca_clientes" style="text-decoration: none;">
+                    <i class="fa-solid fa-angle-right text-center fs-1 ms-4 ps-3 mt-4" ></i>
+                    <p class="ubuntu-bold text-center ms-2 fs-4" style="font-weight: 200;">Próximo</p> 
+                    </a>
+                </div>
+                </li>
+                </ul>
+              </li>
+            </ul>
+            <a href="/administrador" style="text-decoration: none;">
+                <div style="border-left: 2px solid black; border-radius: 0px 0px 0px 0px; width: 90%; text-decoration: none;" class="text-center justify-content-end px-3 m-2 align-self-center ubuntu-regular"> 
+                    <i class="icon-login fa-solid fa-house fa-4x p-2"></i>
+                    <p class="align-self-center source-serif-4-regular" style="text-decoration: none;"> Tela Inicial </p>
+                </div>
+                </a>
+          </div>
+        </div>
+      </nav>
+        <!-- Divisão principal da página -->
+
+        <div class="container-lg position-relative" style="margin-top: 2%;">
+            <div class="row w-100 justify-content-center d-flex pt-2" style="text-align: center;">
+                
+                <div class="col-8">
+                    <div class="input-group mb-3" style="cursor: pointer; height: 100%; background-color: #C9EEF0;border-radius: 5px; border: 1px solid black; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                        <input type="text" class="form-control" placeholder="Pesquisa por placa..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <span class="input-group-text d-flex justify-content-center" id="basic-addon2" style="width: 15%;"><i class="fa-solid fa-check"></i></span>
+                      </div>
+                </div>
+
+                    <div class="col-4">
+                    <div class="ubuntu-bold d-flex align-items-center justify-content-center fs-5" style="cursor: pointer; height: 100%; background-color: #C9EEF0;border-radius: 5px; border: 1px solid black; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                    <a href="/cadastro_carros" style="text-decoration: none;">
+                        <i class="fa-solid fa-paperclip p-2"></i>
+                        Tela de Cadastro
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Carro Cosmético -->
+
+
+            <div class="row w-100 d-flex mt-5 fs-4" style="height: 70%; background-color: #F7FBFF; border-radius: 10px; border: 1px solid black; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                <div class="col-2 d-md-flex d-none align-items-center justify-content-center mt-2 mb-2 flex-column" style="border-right: 1px solid black; text-align: center;">
+                    <div class="">
+                        <i class="fa-solid fa-car fa-2xl" style="font-size: 8rem;"></i> 
+                        <p class="mt-4 py-5 ubuntu-bold fs-4" style="border-bottom: 1px solid black;">Carros</p>
+                    </div>
+                    <div>
+                        <span class="fs-6 dm-sans-medium" style="font-weight: 500 !important;">Disponiveis desde 2010</span>
+                    </div>
+                </div>
+            <!-- Lugar para inserção das infos -->
+            <div id="carros" class="col-10 flex-column p-3 ubuntu-regular">
+                <script>
+
+                    function navegarCarros(type) {
+                        if (window.index === undefined) window.index = 0;
+                        
+                        let i = window.index;
+
+                        document.getElementById(`carro${i}`).classList.add("d-none");
+
+                        veiculos = document.querySelectorAll("#carros>div");
+
+                        switch (type) {
+                            case "first":
+                                i = 0;
+                                break;
+
+                            case "decrement":
+                                if (i == 0) break;
+                                i--;
+                                break;
+
+                            case "increment":
+                                if (i == veiculos.length - 1) break;
+                                i++;
+                                break;
+
+                            case "last":
+                                i = veiculos.length - 1;
+                                break;
+                        }
+
+                        document.getElementById(`carro${i}`).classList.remove("d-none");
+
+                        document.getElementById("navigator").innerHTML = i + 1;
+
+                        window.index = i;
+                    }
+                </script>
+                <% data.forEach((veiculos, index) => { %>
+                    <div id="carro<%= index %>" class="d-none">
+                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Placa:</span> <%= veiculos.veicPlaca %></p>
+                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Marca:</span> <%= veiculos.veicMarca %></p>
+                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Modelo:</span> <%= veiculos.veicModelo %></p>
+                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Cor:</span> <%= veiculos.veicCor %></p>
+                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Ano:</span> <%= veiculos.veicAno %></p>
+                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Combustivel:</span> <%= veiculos.veicComb %></p>
+                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Categoria:</span> <%= veiculos.veicCat %></p>
+                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Status:</span>   <%= veiculos.veicStatusAlocado === 1 ? "Alocado" : "Livre" %></p>
+                        <div class="w-50">
+                            <a href="/veiculos/edit/<%= veiculos.veicPlaca %>" style="text-decoration: none;">
+                                <button class="btn btn-editar fs-6 " style="width: 40%;"> Editar </button>
+                            </a>
+                            <span style="font-size: 0.85rem;">
+                                    ou
+                            </span>
+                            <a href="/veiculos/delete/<%= veiculos.veicPlaca %>">
+                                <button class="btn btn-excluir fs-6" style="width: 40%;"> Excluir </button>
+                            </a>
+                    </div>
+
+                    </div>
+                <% }); %>
+            </div>
+            
+            <div class="d-flex d-md-none mb-3">
+                <button class="btn btn-editar fs-6" style="width: 40%;"> Salvar </button>
+                <span style="font-size: 0.85rem;" class="p-2">
+                    ou
+                </span>
+                <button class="btn btn-excluir fs-6" style="width: 40%;"> Excluir </button>
+            </div>
+            </div>
+        </div>
+
+            <!--Aqui ficam as funções de próximo, anterior, primeiro e último-->
+
+            <div class="row d-flex align-items-center justify-content-center w-100 flex-row mt-5 fs-1" style="text-align: center; max-height: 20%;">
+                <div>
+                <i class="fa-solid fa-backward-fast" style="cursor: pointer;" onclick="navegarCarros('first')"></i>
+                <i class="fa-solid fa-backward-step" style="cursor: pointer;" onclick="navegarCarros('decrement')"></i>
+                <span class="ubuntu-regular" id="navigator"> </span>
+                <i class="fa-solid fa-forward-step" style="cursor: pointer;" onclick="navegarCarros('increment')"></i>
+                <i class="fa-solid fa-forward-fast" style="cursor: pointer;" onclick="navegarCarros('last')"></i>
+            </div>
+            </div>
+            <span class="d-flex align-items-center justify-content-center mt-4 w-100" style="text-align: center;">© BQCars - Todos os direitos reservados 2024</span>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>

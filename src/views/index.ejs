@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Página Inicial do site BQCars"> 
+        <meta name="author" content="Samuel Augusto de Oliveira e Rodrigo Scatolin Flora do Rio">
+        <title>Início | BQ Cars</title>
+        <script type="text/javascript" src="/script/script.js"></script> 
+        <link rel="stylesheet" href="/style/style.css">
+        <script src="https://kit.fontawesome.com/26a3821824.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+<!-- ALERTA!! -->
+<!-- Devido às similaridades entre as páginas de busca e cadastro, os comentários ficarão agrupados em uma só página de cada -->
+<!-- Estas sendo cadastro_ordemservico.html e busca_ordemservico.html -->
+    <body style="background-color: #7AEBEF;">
+            <div class="row align-items-center vh-100 g-0">
+                
+                <!-- Coluna esquerda - Login -->
+                
+                <div class="col row">
+                    <div class="col-2"></div>
+                    <div class="col coluna-login d-flex align-items-center justify-content-center flex-column" style=" box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1rpx, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+    
+                        <!--Row do Header-->
+                        <div class="row d-flex col-12">
+                            <a href="#" class="col-4 d-flex justify-content-start">
+                                <img style="scale: 0.7" src="/assets/Logo BQCars.svg" alt="">
+                            </a>
+
+                            <div class="col-4 align-content-center text-center">
+                                <h1 class="dm-sans-bold">LOGIN</h1>
+                            </div>
+                            
+                            <a href="#" class="col-4 d-flex justify-content-end" style="text-decoration: none;">
+                                <i class="fa-solid fa-x fa-2xl pt-5"></i>
+                            </a>
+                        </div>
+                                    <!-- Login com redes -->
+                        <h5 class="dm-sans-medium" style="margin-top: -20px; opacity: 60%;">Login usando suas redes</h5>
+                        <div class="d-flex flex-row">
+                            <i class="fa-brands fa-facebook p-3 fa-2xl"></i>
+                            <i class="fa-brands fa-instagram p-3 fa-2xl"></i>
+                            <i class="fa-brands fa-google p-3 fa-2xl"></i>
+                            
+                                        <!--Divisão-->
+                        </div>
+                        <div class="position-relative divider">
+                            <hr class="text-secondary">
+                            <div class="divider-content-center">
+                                OU
+                            </div>
+                        </div>
+    
+                                        <!--Form-->
+                    <form action="/login" method="POST" style="width: 100%;">
+                        <div class="px-5 fs-5" action="" style="width: 100%;">
+                            <p style="margin-bottom: -0.1px;"> Login</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <input type="text" class="form-control form-control-lg fs-6" placeholder="Insira seu Login"  name="usuarioLogin" style="height: 6vh;">
+                        </div>
+                        <p style="margin-bottom: -0.1px;"> Senha</p>
+                        <div class="input-group mb-3 d-flex">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+                            <input type="password" class="form-control form-control-lg fs-6" placeholder="Insira sua senha" name="usuarioSenha" style="height: 6vh;">
+                        </div>
+                        <div class="input-group mb-3 d-flex justify-content-between">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="formCheck">
+                                <label for="formCheck" class="form-check-label text-secondary"><small>Lembrar-se de mim</small></label>
+                            </div>
+                                <div>
+                                <small> <a href="#">Esqueci a senha</a></small>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg w-100 ubuntu-bold" onclick="login()">Login</button>
+                    </div>
+                    </form>
+                    <p class="d-flex mt-3 ubuntu-regular fs-5">Não tem uma conta? ‎ <a href="#"> Crie uma!</a></p>
+                    <p class="mt-5">© BQCars - Todos os direitos reservados 2024</p>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                            <!-- Coluna direita - Imagem Background -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="background-holder" style="background-image: url('/assets/background_principal.jpg');"></div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script>
+            function login(){
+                window.location.replace('/administrador');
+            }
+        </script>
+    </body>
+</html>

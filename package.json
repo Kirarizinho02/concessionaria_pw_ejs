@@ -1,0 +1,25 @@
+{
+  "name": "concessionaria_bqcars",
+  "version": "1.0.0",
+  "description": "Trabalho de node 4° bimestre",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "Node",
+    "HTML",
+    "EJS"
+  ],
+  "author": "Kirari e Rodrigo",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-myconnection": "^1.0.4",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.7"
+  }
+}

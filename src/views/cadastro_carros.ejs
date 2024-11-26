@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Página de Cadastro de carros do BQCars"> 
+        <meta name="author" content="Samuel Augusto de Oliveira e Rodrigo Scatolin Flora do Rio">
+        <title>Cadastro Carros | BQ Cars</title>
+
+        <script type="javascript/text" src="script/script.js"></script>
+        <link rel="stylesheet" href="/style/style.css">
+        <script src="https://kit.fontawesome.com/26a3821824.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+<body style="background-color: #7AC7F0;">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-flex" style=" box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;"">
+        <div class="container-fluid d-flex">
+          <a class="navbar-brand" class="me-2 mb-1 d-flex align-items-center ms-6" href="#">
+            <img src="/assets/Logo BQCars.svg" height="120" alt="" loading="lazy" style="margin-top: 2px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse align-items-center" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mx-auto align-items-center">
+              <li class="nav-item">
+                <p class="ubuntu-bold text-center" style="font-size: 2.7rem;"> Cadastro de Carros</p>
+              </li>
+              <li class="nav-item">
+                <ul class="navbar-nav ms-auto ubuntu-regular ps-5" style="font-size: 2rem; line-height: 30px; font-weight: 100;"> <!--Lista feia pelo bootstrap-->
+                    <li class="nav-item dropdown">        
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Outras <br/> Opções
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="/cadastro_carros" id="filtroTodos" value="1">Cadastro de Carros</a></li>
+                            <li><a class="dropdown-item" href="/cadastro_clientes" id="filtroBranco" value="2">Cadastro de Clientes</a> </li>
+                            <li><a class="dropdown-item" href="/cadastro_funcionarios" id="filtroTinto" value="3">Cadastro de Funcionários</a> </li>
+                            <li><a class="dropdown-item" href="/cadastro_ordemservico" id="filtroRose" value="4">Cadastro de Ordem de Serviço</a> </li>
+                            <li><a class="dropdown-item" href="/cadastro_usuarios" id="filtroRose" value="4">Cadastro de Usuários</a> </li>
+                        </ul>
+                    </li>
+                </ul>
+              </li>
+            </ul>
+            <a href="/administrador" style="text-decoration: none;">
+                <div style="border-left: 2px solid black; border-radius: 0px 0px 0px 0px; width: 90%; text-decoration: none;" class="text-center justify-content-end px-3 m-2 align-self-center ubuntu-regular"> 
+                    <i class="icon-login fa-solid fa-house fa-4x p-2"></i>
+                    <p class="align-self-center source-serif-4-regular" style="text-decoration: none;"> Tela Inicial </p>
+                </div>
+                </a>
+          </div>
+        </div>
+      </nav>
+        <!-- Divisão principal da página -->
+
+        <div class="container-lg position-relative" style="margin-top: 2%;">
+            <div class="row w-100 justify-content-center d-flex pt-2" style="text-align: center;">
+                
+                <div class="col-4">
+                    <div class="ubuntu-bold d-flex align-items-center justify-content-center fs-5" onclick="novoCadastro" style="cursor: pointer; height: 140%; background-color: #7AF0CC;border-radius: 5px; border: 1px solid black; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                        <i class="fa-solid fa-file p-2"></i>
+                        Novo Cadastro
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="ubuntu-bold d-flex align-items-center justify-content-center fs-5" style="cursor: pointer; height: 140%; background-color: #7AA1F0;border-radius: 5px; border: 1px solid black; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                        <i class="fa-solid fa-x p-2"></i>
+                        Excluir
+                    </div>
+                </div>
+                    <div class="col-4">
+                    <div class="ubuntu-bold d-flex align-items-center justify-content-center fs-5" style="cursor: pointer; height: 140%; background-color: #C9EEF0;border-radius: 5px; border: 1px solid black; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                        <i class="fa-solid fa-pen p-2"></i>
+                        Editar
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Carro Cosmético -->
+            <form action="<%= isEdit ? ('/veiculos/update/') + veicAtual.veicPlaca : '/veiculos/add' %>" method="post" class="col-12">
+            <div class="row w-100 d-flex mt-5 fs-4" style="height: 70%; background-color: #F7FBFF; border-radius: 10px; border: 1px solid black; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                <div class="col-2 d-md-flex d-none align-items-center justify-content-center mt-2 mb-2 flex-column" style="border-right: 1px solid black; text-align: center;">
+                    <div class="">
+                        <i class="fa-solid fa-car fa-2xl" style="font-size: 8rem;"></i> 
+                        <p class="mt-4 py-5 ubuntu-bold fs-4" style="border-bottom: 1px solid black;">Novo Veiculo</p>
+                    </div>
+                    
+                    <button class="btn btn-salvar mt-3"> Salvar </button>
+                </div>
+            <!-- Lugar para inserção das infos -->
+                <div class="col-5 flex-column p-3 ubuntu-regular">
+                    <label for="placa">Placa:</label>
+                    <input type="text" id="placa" required="" name="veicPlaca" class="input" style="font-weight: 100;" value="<%= isEdit ? veicAtual.veicPlaca : '' %>" <%= isEdit ? 'readonly' : '' %>>
+
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" required="" name="veicModelo" class="input" style="font-weight: 100;" value="<%= isEdit ? veicAtual.veicModelo : '' %>">
+
+                    <label for="cor">Cor:</label>
+                    <input type="text" id="cor" required="" name="veicCor" class="input" style="font-weight: 100;" value="<%= isEdit ? veicAtual.veicCor : '' %>">
+
+                    <label for="categoria">Categoria:</label>
+                    <select name="veicCat" class="form-select mt-2" aria-label="Default select example">
+                        <option value="" <%= !isEdit || !veicAtual.veicCat ? 'selected' : '' %>>Escolha</option>
+                        <option value="1" <%= isEdit && veicAtual.veicCat == 1 ? 'selected' : '' %>>SUV</option>
+                        <option value="3" <%= isEdit && veicAtual.veicCat == 3 ? 'selected' : '' %>>Sedan</option>
+                        <option value="4" <%= isEdit && veicAtual.veicCat == 4 ? 'selected' : '' %>>Hatch</option>
+                        <option value="2" <%= isEdit && veicAtual.veicCat == 2 ? 'selected' : '' %>>Camionete</option>
+                      </select>
+                </div>
+
+                <div class="col-5 flex-column p-3 ubuntu-regular">
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" required="" name="veicMarca" class="input" style="font-weight: 100;" value="<%= isEdit ? veicAtual.veicMarca : '' %>">
+
+                    <label for="ano">Ano:</label>
+                    <input type="text" id="ano" required="" name="veicAno" class="input" style="font-weight: 100;" value="<%= isEdit ? veicAtual.veicAno : '' %>">
+
+                    <label for="combustivel">Combustível:</label>
+                    <select name="veicComb" class="form-select mt-2" aria-label="Default select example">
+                        <option value="E" <%= isEdit && veicAtual.veicComb == 'E' ? 'selected' : '' %>>Etanol</option>
+                        <option value="G" <%= isEdit && veicAtual.veicComb == 'G' ? 'selected' : '' %>>Gasolina</option>
+                        <option value="D" <%= isEdit && veicAtual.veicComb == 'D' ? 'selected' : '' %>>Diesel</option>
+                        <option value="F" <%= isEdit && veicAtual.veicComb == 'F' ? 'selected' : '' %>>Flex</option>
+                      </select>
+
+                    <div class="form-check">
+                        <p class="ms-n1">Status:</p>
+                        <input class="form-check-input" type="radio" name="veicStatusAlocado" name="flexRadioDefault" id="flexRadioDefault1" <%= isEdit && veicAtual.veicStatusAlocado == 1 ? 'checked' : '' %>>
+
+                        <label class="form-check-label" for="flexRadioDefault1">Alocado</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="veicStatusAlocado" name="flexRadioDefault" id="flexRadioDefault2" <%= isEdit && veicAtual.veicStatusAlocado == 1 ? 'checked' : '' %>>
+
+                        <label class="form-check-label" for="flexRadioDefault2">Disponível</label>
+                    </div>
+                    <div class="d-flex d-md-none">
+                        <button class="btn btn-salvar mt-3"> Salvar </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+            
+            <!--Aqui ficam as funções de próximo, anterior, primeiro e último-->
+            <div class="row d-flex align-items-center justify-content-center w-100 flex-row mt-5 fs-1" style="text-align: center; max-height: 20%;">
+                <div>
+                <i class="fa-solid fa-backward-fast" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-backward-step" style="cursor: pointer;"></i>
+                <span class="ubuntu-regular"> 1 - 15</span>
+                <i class="fa-solid fa-forward-step" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-forward-fast" style="cursor: pointer;"></i>
+            </div>
+            </div>
+            <span class="d-flex align-items-center justify-content-center mt-4 w-100" style="text-align: center;">© BQCars - Todos os direitos reservados 2024</span>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>

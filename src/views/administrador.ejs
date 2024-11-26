@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tela de Administradores do site BQCars"> 
+        <meta name="author" content="Samuel Augusto de Oliveira e Rodrigo Scatolin Flora do Rio">
+        <title>Administração | BQ Cars</title>
+
+        <script type="javascript/text" src="script/script.js"></script>
+        <style>
+            @import url(style/style.css);
+        </style>
+        <script src="https://kit.fontawesome.com/26a3821824.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+        <body style="background-color: #7AEBEF;">
+            <div class="row col-12 vh-100 d-flex">
+
+                <!--SideBar dos administradores -->
+                <div class="col-2 flex-direction-column p-3 justify-content-center d-none d-md-block" style="background-color: #F9FDFF; box-shadow: 4px 0px 4px 1px rgba(0, 0, 0, 0.2);">
+                    <a href="/index" class="d-flex align-items-center pb-3 mb-3 mt-3 link-dark text-decoration-none border-bottom justify-content-center">
+                        <img src="assets/Logo BQCars.svg" alt="" height="120" width="150">
+                    </a>
+
+                <!-- Lista colapsável para acesso às outras páginas -->
+                    <ul class="list-unstyled ps-0">
+                        <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded transicao-botao" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true" >
+                            <i class="fa-solid fa-chevron-down"></i>
+                            Opções de Administrador
+                        </button>
+                        <div class="collapse show" id="home-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ms-4" style="display: flex;  width: 80%; align-items: center; flex-direction: column; justify-content: center;">
+                                <div style="border: 1px solid black; border-radius: 10px; width: 90%;" class="p-3 m-2 hover-verde">
+                                    <li class="d-flex flex-direction-column align-items-center justify-content-center p-4"><a href="/busca_clientes" class="link-dark rounded"><i class="fa-solid fa-user fa-2xl"></i> </li>
+                                    <li class="d-flex justify-content-center">Clientes</li></a>
+                                </div>
+                                <div style="border: 1px solid black; border-radius: 10px; width: 90%;" class="p-3 m-2 hover-verde">
+                                    <li class="d-flex flex-direction-column align-items-center justify-content-center p-4"><a href="/busca_funcionarios" class="link-dark rounded"><i class="fa-solid fa-users fa-2xl"></i> </li>
+                                    <li class="d-flex justify-content-center">Funcionários</li></a>
+                                </div>
+                                <div style="border: 1px solid black; border-radius: 10px; width: 90%;" class="p-3 m-2 hover-verde">
+                                    <li class="d-flex flex-direction-column align-items-center justify-content-center p-4"><a href="/busca_carros" class="link-dark rounded"><i class="fa-solid fa-car fa-2xl"></i></li>
+                                    <li class="d-flex justify-content-center">Veículos</li></a>
+                                </div>
+                                <div style="border: 1px solid black; border-radius: 10px; width: 90%;" class="p-3 m-2 hover-verde">
+                                    <li class="d-flex flex-direction-column align-items-center justify-content-center p-4"><a href="/busca_ordemservico" class="link-dark rounded"><i class="fa-solid fa-dollar fa-2xl"></i></li>
+                                    <li class="d-flex justify-content-center">Ordem de Serviço</li></a>
+                                </div>
+                                <div style="border: 1px solid black; border-radius: 10px; width: 90%;" class="p-3 m-2 hover-verde">
+                                    <li class="d-flex flex-direction-column align-items-center justify-content-center p-4"><a href="/busca_usuarios" class="link-dark rounded"><i class="fa-solid fa-user fa-2xl"></i> </li>
+                                    <li class="d-flex justify-content-center">Usuários</li></a>
+                                </div>
+                            </ul>
+                        </div>
+                        </li>
+                    <!-- Botão para voltar à página principal -->
+                    </ul>
+                    <a href="/index" class="text-align-center ms-3" style="text-decoration: none;">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        Sair
+                    </a>
+                </div>
+                <!-- Conteúdo principal do site -->
+                
+                <div class="col-10 justify-content-center">
+                    <div class="row align-items-center justify-content-center d-flex">
+                        <div class="col-6 ubuntu-bold mt-3 d-flex border-zero" style="font-size: 3rem; border-right: 2px solid black; line-height: 95%;">
+                            <p class="ms-5 p-3 d-none d-md-block">
+                            Esta é a tela dos administradores do sistema! 
+                            </p>
+<!-- Informações do usuário vão aqui -->
+                            <p class="ms-5 p-3 d-md-none fs-1 d-flex justify-content-start">
+                                Nome de Usuário:
+                                <span style="font-weight: 100;"> Matricula: </span>
+                            </p>
+                        </div>
+<!-- Informações do usuário só que no mobile -->
+                        <div class="col-6 ubuntu-regular d-none d-md-block" style="font-size: 2rem;">
+                            <p style="font-weight: 1000;">Nome de Usuário: </p>
+                            <p style="margin-top: -1.3rem;">Matricula: </p>
+                        </div>
+                    </div>
+<!-- Três blocos com informações sobre o site (usuários, lucro e funcionários) -->
+                    <div class="row d-flex p-3 my-4 mb-5" style="justify-content: space-evenly;">
+                        <div class="row col-lg-4 col-md-4 col-12 mb-3 p-3 ms-1">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8 col-md-10 d-flex dm-sans-medium fs-4" style="text-align: center;">
+                                <div class="p-3 justify-content-center" style="height: 110%; border: 1px solid black; border-radius: 10px; background-color: #7AF0CC; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                                    <p class="d-inline-block">Usuários Cadastrados</p>
+                                    <p> <bold>1</bold></p>
+                                    <div class="d-flex align-items-center justify-content-center mx-4 py-3" style="background-color: #F9FDFF; border: 1px solid black; border-radius: 10px;">
+                                        <p class="px-2">Marco Aurélio <i class="fa-solid fa-chevron-down"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2"></div>
+
+                        </div>
+
+                        <div class="row col-lg-4 col-md-4 col-12 mb-3 p-3 ms-1">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8 col-md-10 d-flex dm-sans-medium fs-4" style="text-align: center;">
+                                <div class="p-3 justify-content-center" style="height: 110%; border: 1px solid black; border-radius: 10px; background-color: #7AF0CC; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                                    <p class="d-inline-block">Funcionarios Cadastrados</p>
+                                    <p class="d-inline-block"> <strong>2</strong></p>
+                                    <div class="d-flex align-items-center justify-content-center mx-4 py-3 mb-2" style="background-color: #F9FDFF; border: 1px solid black; border-radius: 10px;">
+                                        <p class="px-2">José Rubens <i class="fa-solid fa-chevron-down"></i></p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-center mx-4 py-3 mb-2" style="background-color: #F9FDFF; border: 1px solid black; border-radius: 10px;">
+                                        <p class="px-2">Carlos Eduardo <i class="fa-solid fa-chevron-down"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2"></div>
+
+                        </div>
+
+                        <div class="row col-lg-4 col-md-4 col-12 mb-3 p-3 ms-1">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8 col-md-10 d-flex dm-sans-medium" style="text-align: center; font-size: 1.7rem;">
+                                <div class="p-3 justify-content-center" style="height: 110%; border: 1px solid black; border-radius: 10px; background-color: #7AF0CC; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                                    <p class="d-inline-block">Lucro Esperado</p>
+                                    <div class="d-flex align-items-center justify-content-center mx-4 py-3" style="height: 50%; background-color: #F9FDFF; border: 1px solid black; border-radius: 10px;">
+                                        <p class="px-2">R$14.980,00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2"></div>
+                        </div>
+                    </div>
+
+<!-- Texto motivacional para clicar nos botões -->
+                    <div class="row d-flex ms-5 p-1 mt-5 mb-2" style="font-size: 2.2rem; width: 92%; background-color: #F9FDFF; border: 1px solid black; border-radius: 10px; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                        <p>Com os botões ao lado, você pode obter informações mais <strong>detalhadas </strong>sobre o grupo escolhido.</p>
+                    </div>
+                    <p class="ms-5 p-3 dm-sans-bold d-none d-md-block" style="font-size: 2rem; border-bottom: 1px solid gray;">Experimente usar os botões ao lado!</p>
+                    <p class="ms-5 p-3 dm-sans-bold d-md-none" style="font-size: 2rem; border-bottom: 1px solid gray;">Experimente usar o botão abaixo!</p>
+                    <!-- Menu Offcanvas para dispositivos mobile -->
+                        <div class="d-md-none d-inline-block ps-4 ms-4">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Menu de Administrador</button>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu de Administrador</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ms-4" style="display: flex;  width: 80%; align-items: center; flex-direction: column; justify-content: center;">
+                                        <div style="border: 1px solid black; border-radius: 10px; width: 90%;" class="p-3 m-2 hover-verde">
+                                            <li class="d-flex flex-direction-column align-items-center justify-content-center p-4"><a href="/busca_clientes" class="link-dark rounded"><i class="fa-solid fa-user fa-2xl"></i> </li>
+                                            <li class="d-flex justify-content-center">Clientes</li></a>
+                                        </div>
+                                        <div style="border: 1px solid black; border-radius: 10px; width: 90%;" class="p-3 m-2 hover-verde">
+                                            <li class="d-flex flex-direction-column align-items-center justify-content-center p-4"><a href="/busca_funcionarios" class="link-dark rounded"><i class="fa-solid fa-users fa-2xl"></i> </li>
+                                            <li class="d-flex justify-content-center">Funcionários</li></a>
+                                        </div>
+                                        <div style="border: 1px solid black; border-radius: 10px; width: 90%;" class="p-3 m-2 hover-verde">
+                                            <li class="d-flex flex-direction-column align-items-center justify-content-center p-4"><a href="/busca_carros" class="link-dark rounded"><i class="fa-solid fa-car fa-2xl"></i></li>
+                                            <li class="d-flex justify-content-center">Veículos</li></a>
+                                        </div>
+                                        <div style="border: 1px solid black; border-radius: 10px; width: 90%;" class="p-3 m-2 hover-verde">
+                                            <li class="d-flex flex-direction-column align-items-center justify-content-center p-4"><a href="/busca_ordemservico" class="link-dark rounded"><i class="fa-solid fa-calendar fa-2xl"></i></li>
+                                            <li class="d-flex justify-content-center">Ordem de Serviço</li></a>
+                                        </div>
+                                    </ul>
+                                </div>
+                                </li>
+                                
+                            </ul>
+                                </div>
+                        </div>
+<!-- Footer -->
+                    <p class="ms-5 p-3" style="text-align: center;">© BQCars - Todos os direitos reservados 2024</p>
+                </div>
+            </div>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
