@@ -8,7 +8,7 @@ const app = express();
 require('dotenv').config();
 
 app.use(session({
-    secret: 'chave-secreta',
+    secret: 'senha123',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }

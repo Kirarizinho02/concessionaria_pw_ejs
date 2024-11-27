@@ -7,7 +7,7 @@
         <meta name="author" content="Samuel Augusto de Oliveira e Rodrigo Scatolin Flora do Rio">
         <title>Busca Ordem de Serviço | BQ Cars</title>
 
-        <script type="javascript/text" src="script/script.js"></script>
+        <script type="javascript/text" src="../public/script/script.js"></script>
         <style>
             @import url(style/style.css);
         </style>
@@ -73,7 +73,7 @@
 <!-- Input para a busca dentre as ordens de serviço -->
                 <div class="col-8">
                     <div class="input-group mb-3" style="cursor: pointer; height: 100%; background-color: #C9EEF0;border-radius: 5px; border: 1px solid black; box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
-                        <input type="text" class="form-control" placeholder="Pesquisa por número..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" id="inputBusca" onkeyup="filtrar()" class="form-control" placeholder="Pesquisa por número..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <span class="input-group-text d-flex justify-content-center" id="basic-addon2" style="width: 15%;"><i class="fa-solid fa-check"></i></span>
                       </div>
                 </div>
@@ -144,8 +144,8 @@
                     }
                 </script>
                 <% data.forEach((ordem, index) => { %>
-                    <div id="ordem<%= index %>" class="d-none">
-                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Número:</span> <%= ordem.osNum %></p>
+                    <div id="ordem<%= index %>" class="d-none divordem">
+                        <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Número:</span> <span id="numero"> <%= ordem.osNum %> </span>  </p>
                         <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Matrícula do funcionário:</span> <%= ordem.osFuncMat %></p>
                         <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">CPF Cliente:</span> <%= ordem.osClienteCPF %></p>
                         <p class="p-1" style="font-weight: 200;"><span style="font-weight: 700;">Placa do veículo:</span> <%= ordem.osVeicPlaca %></p>

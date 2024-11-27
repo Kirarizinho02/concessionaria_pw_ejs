@@ -29,61 +29,61 @@ router.get('/administrador', dptoPermitido(1, 2, 3, 4, 5), paginascrud.adm);
 
 
 //rotas de cliente
-router.get('/busca_clientes', clientescrud.list);
+router.get('/busca_clientes', dptoPermitido(1, 2, 3, 4, 5), clientescrud.list);
 
-router.post('/clientes/add', clientescrud.save);
+router.post('/clientes/add', dptoPermitido(1, 2, 3, 4), clientescrud.save);
 
-router.get('/clientes/delete/:cpf', clientescrud.delete);
+router.get('/clientes/delete/:cpf', dptoPermitido(2, 3, 4), clientescrud.delete);
 
-router.get('/clientes/edit/:clienteCPF', clientescrud.edit);
+router.get('/clientes/edit/:clienteCPF', dptoPermitido(1, 2, 3, 4), clientescrud.edit);
 
-router.post('/clientes/update/:cpf', clientescrud.update);
+router.post('/clientes/update/:cpf', dptoPermitido(1, 2, 3, 4), clientescrud.update);
 
 //rotas de usuário
-router.get('/busca_usuarios', userscrud.list);
+router.get('/busca_usuarios', dptoPermitido(4), userscrud.list);
 
-router.post('/usuarios/add', userscrud.save);
+router.post('/usuarios/add', dptoPermitido(4), userscrud.save);
 
-router.get('/usuarios/delete/:senha', userscrud.delete);
+router.get('/usuarios/delete/:senha', dptoPermitido(4), userscrud.delete);
 
-router.get('/usuarios/edit/:senha', userscrud.edit);
+router.get('/usuarios/edit/:senha', dptoPermitido(4), userscrud.edit);
 
-router.post('/usuarios/update/:senha', userscrud.update)
+router.post('/usuarios/update/:senha', dptoPermitido(4), userscrud.update)
 
 //rotas de veículo
-router.get('/busca_carros', veiccrud.list);
+router.get('/busca_carros', dptoPermitido(2, 3, 4, 5), veiccrud.list);
 
-router.post('/veiculos/add', veiccrud.save);
+router.post('/veiculos/add', dptoPermitido(2, 3, 4), veiccrud.save);
 
-router.get('/veiculos/delete/:placa', veiccrud.delete);
+router.get('/veiculos/delete/:placa', dptoPermitido(2, 3, 4), veiccrud.delete);
 
-router.get('/veiculos/edit/:veicPlaca', veiccrud.edit);
+router.get('/veiculos/edit/:veicPlaca', dptoPermitido(2, 3, 4), veiccrud.edit);
 
-router.post('/veiculos/update/:placa', veiccrud.update);
+router.post('/veiculos/update/:placa', dptoPermitido(2, 3, 4), veiccrud.update);
 
 //rotas de funcionario
-router.get('/busca_funcionarios', funccrud.list);
+router.get('/busca_funcionarios', dptoPermitido(2, 3, 4, 5), funccrud.list);
 
-router.post('/funcionarios/add', funccrud.save);
+router.post('/funcionarios/add', dptoPermitido(2, 3, 4), funccrud.save);
 
-router.get('/funcionarios/delete/:matricula', funccrud.delete);
+router.get('/funcionarios/delete/:matricula', dptoPermitido(2, 3, 4), funccrud.delete);
 
-router.post('/funcionarios/update/:matricula', funccrud.update);
+router.post('/funcionarios/update/:matricula', dptoPermitido(2, 3, 4), funccrud.update);
 
-router.get('/funcionarios/edit/:matricula', funccrud.edit);
+router.get('/funcionarios/edit/:matricula', dptoPermitido(2, 3, 4), funccrud.edit);
 
 
 //rotas de ordem de serviço
-router.get('/busca_ordemservico', ordemcrud.list);
+router.get('/busca_ordemservico', dptoPermitido(1, 4), ordemcrud.list);
 
-router.post('/ordem/add', ordemcrud.save);
+router.post('/ordem/add', dptoPermitido(1, 4), ordemcrud.save);
 
-router.get('/ordem/delete/:numero', ordemcrud.delete);
+router.get('/ordem/delete/:numero', dptoPermitido(4), ordemcrud.delete);
 
-router.post('/ordem/update/:numero', ordemcrud.update);
+router.post('/ordem/update/:numero', dptoPermitido(1, 4), ordemcrud.update);
 
-router.get('/ordem/edit/:numero', ordemcrud.edit);
+router.get('/ordem/edit/:numero', dptoPermitido(1, 4), ordemcrud.edit);
 
-router.get('/cadastro_ordemservico' , ordemcrud.cadastro);
+router.get('/cadastro_ordemservico', dptoPermitido(1, 4), ordemcrud.cadastro);
 
 module.exports = router;
