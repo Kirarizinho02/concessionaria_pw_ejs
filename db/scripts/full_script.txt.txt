@@ -226,4 +226,10 @@ INSERT INTO ordem_servico(osNum, osFuncMat, osClienteCPF, osVeicPlaca, osDataRet
     ('20241110222', 1002, 333444555, 'ADX1473', '2024-06-30', '1400.00', '0'),
     ('20240706043', 1011, 777888999, 'AQY2005', '2021-07-15', '1220.00', '0');
 
+INSERT INTO usuarios(usuarioLogin, usuarioSenha, usuarioFuncMat, usuarioSetor, usuarioStatus) VALUES
+    (100, 100, 1001, 1, '0'),
+    (400, 400, 1005, 1, '0'),
+    (500, 500, 1004, 2, '1'),
+    (200, 200, 1007, 2, '1');
+
 #feito :)
