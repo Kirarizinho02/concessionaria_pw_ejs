@@ -1,4 +1,4 @@
-const controller = {};
+const controller = {}; //Tava dando erro no export, mas desse modo funciona
 
 exports.paginaindex = (req, res) => {
     res.render('index');

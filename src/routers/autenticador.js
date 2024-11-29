@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const dptoPermitido = require('../middlewares/middlewareAutenticador')
+const dptoPermitido = require('../middlewares/middlewareAutenticador') //Aqui dá pra ver a função que a gente importou do Middleware em cena 
 
 const auth = require('../controllers/autenticadorController'); 
 const clientescrud = require('../controllers/clientescrud');
@@ -17,11 +17,11 @@ router.post('/login', auth.login);
 //rotas de renderização
 router.get('/index', paginascrud.paginaindex);
 
-router.get('/cadastro_clientes', dptoPermitido(1, 2, 3, 4), paginascrud.cadastroCli);
+router.get('/cadastro_clientes', dptoPermitido(1, 2, 3, 4), paginascrud.cadastroCli); //Ele passa como parâmetro pro allowed deptos esses valores
 
-router.get('/cadastro_carros', dptoPermitido(2, 3, 4), paginascrud.cadastroVeic);
+router.get('/cadastro_carros', dptoPermitido(2, 3, 4), paginascrud.cadastroVeic); //Se o valor do depto da sessão do seu usuário for diferente de um desses
 
-router.get('/cadastro_funcionarios', dptoPermitido(2, 3, 4), paginascrud.cadastroFunc);
+router.get('/cadastro_funcionarios', dptoPermitido(2, 3, 4), paginascrud.cadastroFunc); //Você não tem acesso a rota
 
 router.get('/cadastro_usuarios', dptoPermitido(4), paginascrud.cadastroUser);
 

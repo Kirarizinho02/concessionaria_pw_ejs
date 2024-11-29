@@ -7,16 +7,16 @@ const session = require('express-session');
 const app = express();
 require('dotenv').config();
 
-app.use(session({
+app.use(session({ //Pra usar a sessão a gente tem que definir esses valores.
     secret: 'senha123',
-    resave: false,
+    resave: false, 
     saveUninitialized: true,
     cookie: { secure: false }
 }));
 
 app.use((req, res, next) => {
     if (req.session && req.session.user) {
-        res.locals.usuario = req.session.user;
+        res.locals.usuario = req.session.user; //Defini esse res.locals.usuario para deixar a sessão logada e passar o valor de usuário mesmo se a página sofrer refresh.
     } else {
         res.locals.usuario = null;
     }
